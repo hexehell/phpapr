@@ -27,12 +27,17 @@ print "<p>tu mama tambien</p>";
 
 $nombre = "jefatu";
 
+$enunciado = "";
 
 print "<p>tu mama se llama ". $nombre."</p>";
 
-print "<p>tu mama se llama $nombre</p>";
+print "<p>tu mama se llama $nombre</p>"; // comillas dobles las variables se pone el valor
 
+print '<p>tu mama se llama $nombre</p>';// comillas simples las variables se pone el nombre
 
+echo "<p>tu mama se llama $nombre</p>",$enunciado;// con echo se puede imprimir en variables y con print no
+
+print $enunciado;
 
 ?>
 

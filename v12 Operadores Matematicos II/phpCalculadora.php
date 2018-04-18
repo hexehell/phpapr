@@ -38,7 +38,7 @@
 	<?php
 
 	require ("fxFunciones.php");
-	static	$nVeces =0;
+	
 
 
 	if(isset($_POST["button"]))
@@ -52,7 +52,7 @@
 
 		//fnCalcular($sOperacion,$nNum1,$nNum2);
 	
-		fnCalcularGlobal();
+		//fnCalcularGlobal();
 		fnCalcularGlobal();
 
 		

@@ -19,7 +19,18 @@
 
 <?php
 
+include ("fnFunciones.php"); // include no detiene el flujo del programa si el archivo no es encontrado
+require ("fnFunciones1.php"); // require detiene el flujo del programa si el archivo no es encontrado
+
 print "<p>Tu mama esta pelona</p>";
+
+
+
+fnEscribeTxt();
+fnEscribeTxt();
+fnEscribeTxt();
+fnEscribeTxt();
+
 
 
 print "<p>tu mama tambien</p>";

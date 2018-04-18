@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>v9 Operadores de Comparacion</title>
+	<title>v10 Constantes</title>
 
 </head>
 <style>
@@ -54,7 +54,7 @@ define("COLOR","#990000"); // existe un parametro que permite hacer la constante
 
 ECHO COLOR;
 
-echo "<p>mira cosa util, numero de linea: ". __LINE__." </p>";
+echo "<p>mira cosa util en las constantes , numero de linea: ". __LINE__." </p>";
 
 include ("fnFunciones.php");
 

@@ -33,7 +33,7 @@
 $colorTxt = "rojo";
 
 echo "<p class='$colorTxt'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolorem ullam excepturi, molestiae dolore aliquam, quo amet quasi necessitatibus iure, numquam nostrum inventore provident corporis? Inventore nihil dolore, dolor omnis.
-</p>";
+</p>"; 
 
 $str1 ="Argelia";
 

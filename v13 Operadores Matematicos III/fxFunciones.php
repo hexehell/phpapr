@@ -55,6 +55,16 @@ function fnCalcularGlobal()
 				case 'Módulo':
 				echo $nNum1%$nNum2;
 				break;
+
+				case 'Incremento':
+				$nNum1++;
+				echo $nNum1;
+				break;
+
+				case 'Decremento':
+				$nNum1--;
+				echo $nNum1;
+				break;
 			
 			default:
 				# code...

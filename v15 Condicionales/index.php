@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v15 	Condicionales</title>
+
+</head>
+<style>
+	
+	span
+	{
+
+		margin-right:  25px
+	}
+
+	h1{
+		text-align:center;
+	}
+
+	table{
+		background-color:#FFC;
+		padding:5px;
+		border:#666 5px solid;
+	}
+	
+	.no_validado{
+		font-size:18px;
+		color:#F00;
+		font-weight:bold;
+		text-align: center;
+		
+	}
+	
+	.validado{
+		font-size:18px;
+		color:#0C3;
+		font-weight:bold;
+		text-align: center;
+	}
+	.boxRes
+	{
+		width: 150px;
+		height: 150px;
+		font-weight: 12px;
+		margin: 10px;
+		
+
+	}
+</style>
+
+
+<body>
+
+<p class=""></p>
+
+<h1>Condicionales</h1>
+
+
+<form action="index.php" method="post" name="datos_usuario" id="datos_usuario">
+  <table width="15%" align="center">
+    <tr>
+      <td>Nombre:</td>
+      <td><label for="nombre_usuario"></label>
+      <input type="text" name="nombre_usuario" id="nombre_usuario"></td>
+    </tr>
+    <tr>
+      <td>Edad:</td>
+      <td><label for="edad_usuario"></label>
+      <input type="text" name="edad_usuario" id="edad_usuario"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="enviando" id="enviando" value="Enviar"></td>
+    </tr>
+  </table>
+</form>
+
+
+<?php 
+
+include("fxFunciones.php");
+
+if(isset($_POST["enviando"]))
+{
+	$edad=$_POST["edad"];
+	$sNombre=$_POST["nombre_usuario"];
+
+	if($sNombre =="Salomon")
+	{
+		echo "No salomon del rio, no puedes pasar ";
+
+	}else
+
+	if($edad <=14)
+	{
+		echo "No $sNombre del rio, no puedes pasar ";
+
+
+	}
+
+
+}
+
+
+
+ ?>
+
+
+
+
+
+	
+</body>
+</html>

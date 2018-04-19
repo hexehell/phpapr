@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>v16 	Condicionales II</title>
+	<title>v17 	Switch</title>
 
 </head>
 <style>
@@ -53,7 +53,7 @@
 
 <p class=""></p>
 
-<h1>Condicionales II</h1>
+<h1>Switch</h1>
 
 
 <form action="index.php" method="post" name="datos_usuario" id="datos_usuario">
@@ -103,7 +103,7 @@ if(isset($_POST["enviando"]))
 	// }
 
 	switch (true) {
-		case $edad<=14 && $sNombre=="Salomon":
+		case $edad<=14 && $sNombre=="Salomon": //ta bien fancy este pedo de php
 			echo "No salomon del rio, no puedes pasar ";
 			break;
 		

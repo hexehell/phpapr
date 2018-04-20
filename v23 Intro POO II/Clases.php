@@ -1,4 +1,5 @@
 <?php 
+require ("fxFunciones.php");
 class ClsPersona
 {
 
@@ -34,6 +35,12 @@ class ClsPersona
 	function fnCojer()
 	{
 
+	}
+
+	function fnDimeLocura()
+	{
+
+		fnEcho("La locura es ". $this->sNivelLocura);
 	}
 
 }

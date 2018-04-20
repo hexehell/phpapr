@@ -6,7 +6,7 @@ require ("fxFunciones.php");
 */
 class ClsSer //extends AnotherClass
 {
-	var $sNombre;
+	protected $sNombre;
 	
 	function ClsSer($psNombre)
 	{

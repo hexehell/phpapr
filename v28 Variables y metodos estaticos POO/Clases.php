@@ -41,12 +41,6 @@ class ClsSer //extends AnotherClass
 		fnEcho("empezar a cojer");
 
 	}
-
-
-
-
-
-
 }
 
 class ClsPersona extends ClsSer
@@ -88,7 +82,6 @@ class ClsPersona extends ClsSer
 		$this->nNivelLocura = $nlocura;
 
 	}
-
 }
 
 
@@ -133,7 +126,6 @@ class ClsEnte extends ClsSer
 		$this->nNivelLocura = $nlocura;
 
 	}
-
 }
 
 
@@ -141,4 +133,6 @@ class ClsEnte extends ClsSer
 
  ?>
 	
+
+
 

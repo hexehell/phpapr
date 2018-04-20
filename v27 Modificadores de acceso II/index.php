@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>v26 Modificadores de acceso</title>
+	<title>v25 Herencia</title>
 </head>
 <body>
 

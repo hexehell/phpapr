@@ -37,6 +37,26 @@
 			fnEcho("$llave $valor");
 		}
 
+	fnEcho("ordenar con sort() array arr2");
+
+	sort($arr2);
+
+
+		foreach ($arr2 as $llave => $valor) {
+			fnEcho("$llave $valor");
+		}
+
+
+	$noArr = "no es un array";
+
+	if(is_array($arr))
+		fnEcho("\$arr es un array");
+
+
+	if(!is_array($noArr))
+		fnEcho("\$noArr no es un array");
+
+
 	 ?>
 	
 </body>

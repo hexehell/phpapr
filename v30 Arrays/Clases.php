@@ -1,9 +1,6 @@
 <?php 
 require ("fxFunciones.php");
 
-/**
-* 
-*/
 
 class Compra_vehiculo{
 		
@@ -39,6 +36,8 @@ class Compra_vehiculo{
 		
 		static function fnSetAyuda($nAyuda)
 		{
+			if(date("m-d-y")>"04-01-18")
+
 			self::$ayuda = $nAyuda;
 
 
@@ -95,7 +94,10 @@ class Compra_vehiculo{
 		
 		
 		
-	}// fin clase
+	}
+
+
+
 
  ?>
 	

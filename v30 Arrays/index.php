@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>v29 Variables y metodos estaticos II</title>
+	<title>v27 Modificadores de acceso II</title>
 </head>
 <body>
 
@@ -10,8 +10,7 @@
 
 	include ("Clases.php");
 
-	//Compra_vehiculo::$ayuda=10000;
-	
+	Compra_vehiculo::fnSetAyuda(4500);
 	
 	$compra_Antonio=new Compra_vehiculo("compacto");
 	
@@ -26,14 +25,14 @@
 	$compra_Ana->climatizador();
 	
 	$compra_Ana->tapiceria_cuero("rojo");
+
+	Compra_vehiculo::fnSetAyuda(4500);
 	
 	echo $compra_Ana->precio_final();
 	
 	
 	
 	
-
-
 	 ?>
 	
 </body>

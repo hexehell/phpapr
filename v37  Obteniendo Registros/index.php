@@ -11,7 +11,7 @@
 	include ("fxFunciones.php");
 
 	$sHost = "localhost";
-	$sDBnombre = "phpapra";
+	$sDBnombre = "phpapr";
 	$sUsuario = "root";
 	$sContraseña = "root";
 

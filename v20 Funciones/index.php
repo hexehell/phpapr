@@ -45,7 +45,7 @@
 	{
 		width: 200px;
 		height: 220px;
-		font-weight: 1px 
+		font-weight: 1px; 
 		font-size: 1px;
 		margin:auto;
 		text-align: center;

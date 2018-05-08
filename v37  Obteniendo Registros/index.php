@@ -6,6 +6,7 @@
 </head>
 <body>
 
+    
 	<?php 
 
 	include ("fxFunciones.php");
@@ -17,6 +18,9 @@
 
 	
 	$scon = mysqli_connect($sHost,$sUsuario,$sContraseña);
+        
+        mysqli_set_charset($link,"utf8");
+        
 
 	if(mysqli_connect_errno())
 	{

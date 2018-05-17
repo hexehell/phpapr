@@ -19,7 +19,7 @@
 	
 	$scon = mysqli_connect($sHost,$sUsuario,$sContraseña);
         
-        mysqli_set_charset($link,"utf8");
+        mysqli_set_charset($scon,"utf8");
         
 
 	if(mysqli_connect_errno())
@@ -37,12 +37,20 @@
 
 	$res= mysqli_query($scon,$sQuery);
 
-	$row =mysqli_fetch_row($res);
+	//$row =mysqli_fetch_row($res);
 
-	foreach ($row  as $value) {
+        while($row =mysqli_fetch_row($res))
+        {
+        
+            foreach ($row  as $value) 
+            {
 		fnEcho($value);
-	}
-
+            }
+            
+            fnEcho("---");
+        }
+        
+        mysqli_close($scon);
 
 	 ?>
 	

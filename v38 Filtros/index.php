@@ -17,7 +17,9 @@
 <body>
 
     
-    <div class="container"> 
+    
+    <div class="container jumbotron"> 
+        <h2>Buscar</h2>
         <form method="POST" action=".">
           <div class="form-group">
             <label for="txtNombre">Nombre</label>
@@ -29,9 +31,11 @@
             <input type="text" class="form-control" id="txtApellido" name="txtApellido" placeholder="Apellido">
           </div>
 
-          <button type="submit" name="btnEnviar" class="btn btn-primary">Enviar</button>
+          <button type="submit" name="btnEnviarSel" class="btn btn-primary">Enviar</button>
         </form>
     </div>
+    
+    <br/>
 
     <div class="container">
 	<?php 
@@ -40,30 +44,14 @@
         include ("phpDatosConexion.php");
         include ("Clases.php");
         
-        if(isset($_POST["btnEnviar"]))
+        if(isset($_POST["btnEnviarSel"]))
         {
 
             $sNombre= $_POST["txtNombre"];
             $sApellido = $_POST["txtApellido"];
             
             
-	
-            $scon = mysqli_connect($sHost,$sUsuario,$sContraseña);
-
-            mysqli_set_charset($scon,"utf8");
-
-
-            if(mysqli_connect_errno())
-            {
-
-                    fnEcho("No jalo");
-                    exit();
-            }
-
-
-
-            mysqli_select_db($scon,$sDBnombre) or die("la base de datos: $sDBnombre, no existe");
-
+            
             $sQuery = "select * from tbl_ses_usuarios";
             $sQuery = $sQuery . " where firstname = '$sNombre'";
             $sQuery = $sQuery . " or lastname = '$sApellido'";
@@ -82,6 +70,57 @@
 	 ?>
 	
     </div>
+    
+    <br/>
+    
+    
+    
+    <div class="container jumbotron"> 
+        <h2>Insertar</h2>
+        <form method="POST" action=".">
+          <div class="form-group">
+            <label for="txtNombreIns">Nombre</label>
+            <input type="text" class="form-control" id="txtNombreIns" name="txtNombreIns" aria-describedby="nombre" placeholder="Nombre Usuario">
+            
+          </div>
+          <div class="form-group">
+            <label for="txtApellidoIns">Apellido</label>
+            <input type="text" class="form-control" id="txtApellidoIns" name="txtApellidoIns" placeholder="Apellido">
+          </div>
+            
+          <div class="form-group">
+                <label for="txtEmail">Apellido</label>
+            <input type="text" class="form-control" id="txtEmail" name="txtEmail" placeholder="Apellido">
+          </div>
+
+          <button type="submit" name="btnEnviarIns" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    
+    
+    <?php
+    
+        if(isset($_POST["btnEnviarIns"]))
+        {
+            
+            $sNombre= $_POST["txtNombre"];
+            $sApellido = $_POST["txtApellido"];
+            $sEmail = $_POST["txtEmail"];
+            
+                       
+	
+
+
+            $sQuery = "Insert into";
+            $sQuery = $sQuery . " where firstname = '$sNombre'";
+            $sQuery = $sQuery . " or lastname = '$sApellido'";
+            
+            
+            
+            
+        }
+    
+    ?>
     
     <script  src="js/jquery.js" ></script>
     <script src="js/bootstrap4.min.js"></script>    

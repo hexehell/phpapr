@@ -1,0 +1,18 @@
+.btn-amarillo
+{
+	background: black;
+	color:white;
+	text-decoration: none;
+	
+
+}
+
+.btn-amarillo:hover
+{
+	background:#ffd700;
+	border-color: black;
+	text-decoration: none;
+	color: gray ;
+
+}
+

@@ -10,7 +10,7 @@ class clsTabla{
 		var $sQuery;
                 var $sNombre;
                 var $sApellido;
-		//private	static $ayuda=0;
+                var $sEmail;
 
 
 		
@@ -22,6 +22,7 @@ class clsTabla{
                     $this->sQuery = $psQuery;
                     $this->sNombre = "";
                     $this-> sApellido = "";
+                    $this->sEmail = "";
                     
 		}// fin constructor
 	
@@ -69,10 +70,11 @@ class clsTabla{
                {
                    
                    $stmt = mysqli_prepare($this->ptrCon,$this->sQuery);  
-                    mysqli_stmt_bind_param($stmt, "ss", $this->sNombre,$this->sApellido);
+                    mysqli_stmt_bind_param($stmt, "sss", $this->sNombre,$this->sApellido, $this->sEmail);
                     $stmt->execute();
                     $res = mysqli_stmt_get_result ($stmt);
            
+                    echo("<form method='POST' action='.' id='tblPost' name='tblPost'><input type='hidden' class='hidden' id='trEditar' name='trEditar' value='' /></form>");
                     echo("<table class='table table-dark table-hover'>");
 
                            $bHeaders = false;
@@ -82,6 +84,7 @@ class clsTabla{
                                 if(!$bHeaders)
                                 {
                                     echo("<tr>");
+                                        echo("<th>Editar</th>");
                                         foreach ($row  as $key=>$value) 
                                         {
 
@@ -94,9 +97,15 @@ class clsTabla{
                                 }
 
                                 echo("<tr>");
-
-                                    foreach ($row  as $value) 
+                                    
+                                    foreach ($row  as $key=>$value) 
                                     {
+                                        if($key=='id')
+                                        {
+                                            echo("<td class='text-center editar' onclick=\"$('#trEditar').val('$value');$('#tblPost').submit();\"><i class='far fa-edit'></i></td>");
+                                            
+                                            
+                                        }
                                         echo("<td>".$value."</td>");
                                     }
 

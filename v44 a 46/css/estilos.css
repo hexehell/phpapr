@@ -1,0 +1,126 @@
+
+/*ETIQUETAS*/
+*{
+
+	margin:0;
+	padding:0;
+}
+
+html, body, h1, h2, h3, h4, h5, h6 {
+  /*font-family: "Allerta Stencil", Sans-serif !important;*/
+  /*font-family: 'Tangerine', serif !important;*/
+   font-family: "Lobster", serif !important;
+   position: relative;
+}
+
+header
+{
+ text-align: center;
+ margin-bottom: 15px;
+
+}
+
+
+
+body
+{
+	/*background: url("../Imagenes/fondo.svg");*/
+	/*background-attachment: fixed;*/
+	/*background-color: #000;*/
+	/*background-size: cover;*/
+	/*padding: 0;*/
+	background-color: white;
+}
+
+
+
+/*MARGENES*/
+.margenS
+{
+	margin-top: 10px;
+
+}
+
+.margenI
+{
+	margin-bottom: 30px;
+}
+
+.margenSL
+{
+	margin-bottom: 15px;
+}
+
+.margenSL2
+{
+	margin-bottom: 50px
+
+}
+
+
+/*ETIQUETAS*/
+.ddOpcion, .ddOpcion:link,  .ddOpcion:visited
+{
+	color: ivory !important;
+	text-decoration: none !important;
+
+
+}
+
+.ddOpcion:active
+{
+	color: gray !important;
+	text-decoration: none !important;
+}
+
+.banner-img
+{
+	height: 400px;
+	width: 1600px;
+}
+
+.iconos{
+	
+	text-decoration: none !important;
+}
+
+.iconos:hover>a, .iconos:active>a, .iconos:link>a
+{
+	color: gray !important;
+	text-decoration: none !important;
+}
+
+.img-colaboradores
+{
+	height: 120px;
+	width: 120px;
+
+}
+
+.img-cert
+{
+	height: 140px;
+	width: 140px;
+
+}
+
+.jumbotron
+{
+
+	background: #ffec80 !important;
+}
+
+.editar
+{
+    cursor: pointer;
+    
+}
+
+
+@media (min-width: 768px)
+ {
+  .modal-xl {
+    width: 90%;
+   max-width:1600px;
+  }
+}

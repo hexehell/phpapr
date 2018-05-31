@@ -10,10 +10,6 @@
         
 </head>
 
-
-
-
-
 <body>
     
     <div class="container jumbotron"> 
@@ -196,42 +192,16 @@
             $sNombre= $_POST["txtNombre"];
             $sApellido = $_POST["txtApellido"];
            
-           $stmt = mysqli_prepare($scon," CALL `usp_ses_Usuario_Sel`(?,?)");  
-           mysqli_stmt_bind_param($stmt, "ss", $sNombre,$sApellido);
-           $stmt->execute();
-           $res = mysqli_stmt_get_result ($stmt);
-           
-            echo("<table class='table table-dark table-hover'>");
-                   
-                   $bHeaders = false;
-                   
-                    while($row = mysqli_fetch_array($res,MYSQLI_ASSOC))
-                    {
-                        if(!$bHeaders)
-                        {
-                            echo("<tr>");
-                                foreach ($row  as $key=>$value) 
-                                {
-
-                                    echo("<th>".$key."</th>");
-
-                                }
-                            echo("</tr>");  
-                            
-                            $bHeaders = true;
-                        }
-                        
-                        echo("<tr>");
-                        
-                            foreach ($row  as $value) 
-                            {
-                                echo("<td>".$value."</td>");
-                            }
-                         
-                        echo("</tr>");
-                    }
-                   
-                   echo("</table>");
+             
+          
+             $Query = " CALL `usp_ses_Usuario_Sel`(?,?)";
+             
+             $tblDatos = new clsTabla($scon, $Query);
+             
+             $tblDatos->sNombre = $sNombre;
+             $tblDatos->sApellido = $sApellido;
+             
+             $tblDatos->fnPitarTablaSP();
                    
          //   mysqli_prepare($scon," CALL `usp_ses_Usuario_Sel`(?,?)");   
          //  

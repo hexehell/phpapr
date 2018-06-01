@@ -29,12 +29,12 @@
         <h2>Actualizar (Store Procedure)</h2>
         <form method="POST" action=".">
           <div class="form-group">
-            <label for="txtNombreIns">Nombre</label>
+            <label for="txtNombre">Nombre</label>
             <input type="text" class="form-control" id="txtNombre" name="txtNombre" aria-describedby="nombre" placeholder="Nombre Usuario">
             
           </div>
           <div class="form-group">
-            <label for="txtApellidoIns">Apellido</label>
+            <label for="txtApellido">Apellido</label>
             <input type="text" class="form-control" id="txtApellido" name="txtApellido" placeholder="Apellido">
           </div>
             
@@ -51,22 +51,25 @@
     <div class="container">
         <?php
     
-        if(isset($_POST["btnEnviarIns2"]))
+        if(isset($_POST["btnActualizarAct"]))
         {
-            
-            $sNombre= $_POST["txtNombreIns"];
-            $sApellido = $_POST["txtApellidoIns"];
-            $sEmail = $_POST["txtEmail"];
-            
-                       
-	
-            $stmt = $scon->prepare(" CALL `usp_ses_Usuario_Upd`(?,?,?)");
-            
-            mysqli_stmt_bind_param ($stmt ,"sss", $sNombre, $sApellido, $sEmail);
-            
-            $stmt->execute();
+             if(isset($_POST["trEditar"]))
+             {  
+                    $nRenglon = $_POST["trEditar"];
 
-       
+                    $sNombre= $_POST["txtNombreIns"];
+                    $sApellido = $_POST["txtApellidoIns"];
+                    $sEmail = $_POST["txtEmail"];
+
+
+
+                    $stmt = $scon->prepare(" CALL `usp_ses_Usuario_Upd`(?,?,?,?)");
+
+                    mysqli_stmt_bind_param ($stmt ,"isss",$nRenglon, $sNombre, $sApellido, $sEmail);
+
+                    $stmt->execute();
+
+             }
          
             
             
@@ -76,26 +79,26 @@
         
         if(isset($_POST["btnBuscarAct"]))
         {
+             
+                 $sNombre= $_POST["txtNombre"];
+                 $sApellido = $_POST["txtApellido"];
+                 $sEmail = $_POST["txtEmail"];
 
-            $sNombre= $_POST["txtNombre"];
-            $sApellido = $_POST["txtApellido"];
-            $sEmail = $_POST["txtEmail"];
+
+                  $Query = " CALL `usp_ses_Usuario_Sel`(?,?,?)";
+
+                  $tblDatos = new clsTabla($scon, $Query);
+
+                  $tblDatos->sNombre = $sNombre;
+                  $tblDatos->sApellido = $sApellido;
+                  $tblDatos->sEmail = $sEmail;
+
+                  $tblDatos->fnPitarTablaSP();
+
+
+                 mysqli_close($scon);
              
-          
-             $Query = " CALL `usp_ses_Usuario_Sel`(?,?,?)";
-             
-             $tblDatos = new clsTabla($scon, $Query);
-             
-             $tblDatos->sNombre = $sNombre;
-             $tblDatos->sApellido = $sApellido;
-             $tblDatos->sEmail = $sEmail;
-             
-             $tblDatos->fnPitarTablaSP();
-                  
-             
-            mysqli_close($scon);
         }
-    
 
         
     ?>
@@ -112,12 +115,33 @@
         if(isset($_POST["trEditar"]))
         {
              $Query = " CALL usp_ses_UsuarioID_Sel(?)";
+                    
+                    $nRenglon = $_POST["trEditar"];
+                    
+                    $stmt = mysqli_prepare($scon,$Query);
+              
+                    mysqli_stmt_bind_param($stmt, "i", $nRenglon);
+                    $stmt->execute();
+                    $res = mysqli_stmt_get_result ($stmt);
+                    
+                    $row = mysqli_fetch_array($res,MYSQLI_ASSOC);
+                    
+                    $sNombre= $row["firstname"];
+                    $sApellido = $row["lastname"];
+                    $sEmail = $row["email"];   
+                    
+                    echo("<input type='hidden'  id='txtID'  />");
             
-           // echo("<script type='text/javascript'>$('#txtNombre').val('pito');</script>");
+            echo( "<script type='text/javascript'>"
+                    . "$('#txtNombre').val('$sNombre');"
+                    . "$('#txtApellido').val('$sApellido');"
+                    . "$('#txtEmail').val('$sEmail');"
+                    . "$('#txtID').val('$nRenglon');"
+                    . "</script>");
             
         }
     
     
     ?>
 </body>
-</html>
+    </html>

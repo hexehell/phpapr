@@ -11,6 +11,7 @@ class clsTabla{
                 var $sNombre;
                 var $sApellido;
                 var $sEmail;
+                var $sSubmit;
 
 
 		
@@ -23,7 +24,7 @@ class clsTabla{
                     $this->sNombre = "";
                     $this-> sApellido = "";
                     $this->sEmail = "";
-                    
+                    $this->sSubmit = "";
 		}// fin constructor
 	
                 
